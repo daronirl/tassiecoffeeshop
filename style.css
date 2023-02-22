@@ -31,6 +31,11 @@ header {
    
 }
 
+.rewards-link {
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
 h2 {
     text-align: center;
     padding-top: 20px;
@@ -170,10 +175,10 @@ h2 {
 
 }
 
-/* .hidden {
+ /* .hidden {
     display: none;
-} */
-
+} 
+ */
 
 
 
