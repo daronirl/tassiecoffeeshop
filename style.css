@@ -3,7 +3,10 @@
     padding: 0;
     font-family: 'Fascinate', cursive;
     font-family: 'Inter', sans-serif;
+   
+
 }
+
 
 
 header {
@@ -11,6 +14,7 @@ header {
   padding: 20px;
   font-size: 0.7em;
 }
+
 
 .tassie-header {
     color: #e0114f;
@@ -38,7 +42,7 @@ h2 {
 
 }
 
-button {
+.add-button {
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -57,7 +61,7 @@ button {
     z-index: 1;
    }
    
-   button:before {
+   .add-button:before {
     transition: 0.5s all ease;
     position: absolute;
     top: 0;
@@ -70,18 +74,66 @@ button {
     z-index: -1;
    }
    
-   button:hover, button:focus {
+   .add-button:hover, .add-button:focus {
     color: white;
    }
    
-   button:hover:before, button:focus:before {
+   .add-button:hover:before, .add-button:focus:before {
     transition: 0.5s all ease;
     left: 0;
     right: 0;
     opacity: 1;
    }
    
-   button:active {
+   .add-button:active {
+    transform: scale(0.9);
+   }
+
+   .remove-button {
+    font-size: 7px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.7em 1.4em;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 3px solid #FF0072;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: #FF0072;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+   }
+   
+   .remove-button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #FF0072;
+    z-index: -1;
+   }
+   
+   .remove-button:hover, .remove-button:focus {
+    color: white;
+   }
+   
+   .remove-button:hover:before, .remove-button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+   }
+   
+   .remove-button:active {
     transform: scale(0.9);
    }
 
@@ -94,9 +146,38 @@ button {
    }
 
 
+   .item-display {
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 40px auto;
+    height: 350px;
+    width: 340px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+
+
+   }
+
+   .order-complete, .total {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        
+}
+
+   .order-comlete, p {
+        padding: 5px;
+      
+
+}
+
+/* .hidden {
+    display: none;
+} */
 
 
 
+
+   
 
    @media  (min-width: 768px) {
 

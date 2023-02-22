@@ -30,28 +30,28 @@
         <img src="images/coffee.png">
         <p>Large Bark Coffee</p>
         <p>$4.00</p>
-        <button>Add Item</button>
+        <button class="add-button">Add Item</button>
     </div>
 
     <div class="items">
         <img src="images/espresso.png">
         <p>Espresso</p>
         <p>$5.00</p>
-        <button>Add Item</button>
+        <button class="add-button">Add Item</button>
     </div>
 
     <div class="items">
         <img src="images/bagel.png">
         <p>Bagel</p>
         <p>$2.00</p>
-        <button>Add Item</button>
+        <button class="add-button">Add Item</button>
     </div>
 
     <div class="items">
         <img src="images/milkshake.png">
         <p>Milkshakes</p>
         <p>$6.00</p>
-        <button>Add Item</button>
+        <button class="add-button">Add Item</button>
     </div>
 </div>
 
@@ -61,13 +61,18 @@
 
 <hr>
 
-<div class="item-display">
-    <div class="items-complete items">
-       
-        <p>Large Bark Coffee</p>
-        <p>$4.00</p>
-        
+<div class="item-display hidden">
+   <div class="order-complete">
+     <p>Large coffee - <span class="price-of-item">$4.00</span> <button class="remove-button">Remove Item</button></p>
+     <p>Espresso - <span class="price-of-item">$5.00</span> <button class="remove-button">Remove Item</button></p>
+     <p>Bagel - <span class="price-of-item">$2.00</span> <button class="remove-button">Remove Item</button></p>
+     <p>Milkshake - <span class="price-of-item">$6.00</span> <button class="remove-button">Remove Item</button></p>
     </div>
+
+    <div class="total">
+        <p>Total: $0.00</p>
+    </div>
+
 </div>
 </main>
 
