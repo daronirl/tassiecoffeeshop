@@ -72,13 +72,14 @@ function createNewItem(item) {
 
     const p = document.createElement('p');
     p.appendChild(document.createTextNode(item));
-
+    p.innerText = 'Large Coffee';
     const span = document.createElement('span');
     span.className = 'price-of-item';
 
 
     const button = document.createElement('button');
     button.className = 'remove-button';
+    button.innerText = 'Remove Item';
 
     p.appendChild(span);
     span.appendChild(button);
@@ -91,5 +92,5 @@ console.log(p.innerHTML);
 }
 
 
-createNewItem('Espresso');
+createNewItem();
 // createListItem('Large Coffee');
