@@ -3,31 +3,60 @@ const removeItem = document.querySelector('.remove-button');
 const hidden = document.querySelector('.hidden');
 const itemDisplay = document.querySelector('.order-complete');
 const btnCoffee = document.querySelector('.btn-coffee');
-const btnEspresso = document.querySelector('#btn-espresso');
-const btnBagel = document.querySelector('#btn-bagel');
+const btnEspresso = document.querySelector('.btn-espresso');
+const btnBagel = document.querySelector('.btn-bagel');
 const btnShake = document.querySelector('#btn-shake');
+
 const cost = document.querySelector('#cost');
 
-// const lCoffee =  {
-
-//         coffee: 'Large Coffee',
-//         price: '$4.00'
-//     }
 
 btnCoffee.addEventListener('click', addCoffeeOrder);
+btnEspresso.addEventListener('click', addEspressoOrder);
+btnBagel.addEventListener('click', addBagelOrder);
+
 
 
 function addCoffeeOrder () {
   hidden.classList.remove('hidden');
   const p = document.createElement('p');
   p.appendChild(document.createTextNode('Large Coffee'));
-  
-
-  
+  const input = document.createElement('input');
+  p.appendChild(input);
+ 
 
   document.querySelector('.order-complete').appendChild(p);
  
 }
+
+
+
+function addEspressoOrder () {
+  hidden.classList.remove('hidden');
+  const p = document.createElement('p');
+  p.appendChild(document.createTextNode('Espresso'));
+  const input = document.createElement('input');
+  p.appendChild(input);
+ 
+
+  document.querySelector('.order-complete').appendChild(p);
+ 
+}
+
+
+
+function addBagelOrder () {
+  hidden.classList.remove('hidden');
+  const p = document.createElement('p');
+  p.appendChild(document.createTextNode('Bagel'));
+  const input = document.createElement('input');
+  p.appendChild(input);
+ 
+
+  document.querySelector('.order-complete').appendChild(p);
+ 
+}
+
+
 
 
 
@@ -51,11 +80,6 @@ function addCoffeeOrder () {
 
 //   });
 // });
-
-
-
-
-
 
 // function createNewItem(item) {
 
