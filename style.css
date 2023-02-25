@@ -188,7 +188,9 @@ img:hover {
 
 
 
-
+input {
+    width: 40px;
+}
    
 
    @media  (min-width: 768px) {

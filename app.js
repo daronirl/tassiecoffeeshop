@@ -1,4 +1,4 @@
-const addItem = document.querySelectorAll('.add-button');
+
 const removeItem = document.querySelector('.remove-button');
 const hidden = document.querySelector('.hidden');
 const itemDisplay = document.querySelector('.order-complete');
@@ -6,6 +6,7 @@ const btnCoffee = document.querySelector('.btn-coffee');
 const btnEspresso = document.querySelector('#btn-espresso');
 const btnBagel = document.querySelector('#btn-bagel');
 const btnShake = document.querySelector('#btn-shake');
+const cost = document.querySelector('#cost');
 
 // const lCoffee =  {
 
@@ -13,10 +14,23 @@ const btnShake = document.querySelector('#btn-shake');
 //         price: '$4.00'
 //     }
 
+btnCoffee.addEventListener('click', addCoffeeOrder);
 
-btnCoffee.addEventListener('click', () => {
-  console.log(btnCoffee);
-});
+
+function addCoffeeOrder () {
+  hidden.classList.remove('hidden');
+  const p = document.createElement('p');
+  p.appendChild(document.createTextNode('Large Coffee'));
+  
+
+  
+
+  document.querySelector('.order-complete').appendChild(p);
+ 
+}
+
+
+
 
 // addItem.addEventListener('click', addItemToList);
 
@@ -40,39 +54,6 @@ btnCoffee.addEventListener('click', () => {
 
 
 
-// //  function tassie () { 
-// // for (let i = 0; i < addItem.length; i++) {
-// //     addItem[i].addEventListener('click', function() {
-// //          hidden.classList.remove('hidden');
-// //          let html = `
-// //          ${lCoffee.coffee} ${lCoffee.price}
-
-// //          `;
-
-         
-// //          itemDisplay.innerHTML = html;
-         
-
-     
-// //     });
-   
-// //   } 
-// // }
-
-
-// // tassie();
-
-// // function createListItem(item) {
-// //     const p = document.createElement('p');
-// //     p.innerHTML = `${item}
-// //     <span class="price-of-item">$4.00</span> <button class="remove-button">Remove Item</button>
-    
-// //     `
-
-// //     document.querySelector('.order-complete').appendChild(p);
-    
-
-// // }
 
 
 
