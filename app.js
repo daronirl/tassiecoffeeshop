@@ -5,27 +5,42 @@ const itemDisplay = document.querySelector('.order-complete');
 const btnCoffee = document.querySelector('.btn-coffee');
 const btnEspresso = document.querySelector('.btn-espresso');
 const btnBagel = document.querySelector('.btn-bagel');
-const btnShake = document.querySelector('#btn-shake');
+const btnShake = document.querySelector('.btn-shake');
+const priceOfItem = document.querySelector('.price-of-item');
 
 const cost = document.querySelector('#cost');
+let total = 0;
 
 
+// Buttons to add each item to order
 btnCoffee.addEventListener('click', addCoffeeOrder);
 btnEspresso.addEventListener('click', addEspressoOrder);
 btnBagel.addEventListener('click', addBagelOrder);
+btnShake.addEventListener('click', addMilkShakeOrder);
 
 
 
 function addCoffeeOrder () {
-  hidden.classList.remove('hidden');
-  const p = document.createElement('p');
-  p.appendChild(document.createTextNode('Large Coffee'));
-  const input = document.createElement('input');
-  p.appendChild(input);
  
 
-  document.querySelector('.order-complete').appendChild(p);
+    hidden.classList.remove('hidden');
+    const p = document.createElement('p');
+    p.appendChild(document.createTextNode("Large Coffee:"));
+    // const input = document.createElement('input');
+    // p.appendChild(input);
+
+  //  p.appendChild(span);
+
+    document.querySelector('.order-complete').appendChild(p);
+  
+    if (btnCoffee === true){
+      total++;
+      priceOfItem.innerHTML = total;
+      
+    }
+
  
+
 }
 
 
@@ -34,12 +49,12 @@ function addEspressoOrder () {
   hidden.classList.remove('hidden');
   const p = document.createElement('p');
   p.appendChild(document.createTextNode('Espresso'));
-  const input = document.createElement('input');
-  p.appendChild(input);
- 
-
+  // const input = document.createElement('input');
+  // p.appendChild(input);
   document.querySelector('.order-complete').appendChild(p);
- 
+
+
+  
 }
 
 
@@ -48,8 +63,21 @@ function addBagelOrder () {
   hidden.classList.remove('hidden');
   const p = document.createElement('p');
   p.appendChild(document.createTextNode('Bagel'));
-  const input = document.createElement('input');
-  p.appendChild(input);
+  // const input = document.createElement('input');
+  // p.appendChild(input);
+ 
+
+  document.querySelector('.order-complete').appendChild(p);
+ 
+}
+
+
+function addMilkShakeOrder () {
+  hidden.classList.remove('hidden');
+  const p = document.createElement('p');
+  p.appendChild(document.createTextNode('Milkshake'));
+  // const input = document.createElement('input');
+  // p.appendChild(input);
  
 
   document.querySelector('.order-complete').appendChild(p);

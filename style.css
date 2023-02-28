@@ -187,11 +187,13 @@ img:hover {
 }
 
 
-
+/* 
 input {
-    width: 40px;
+    width: 20px;
+    padding: 3px;
+    text-align: center;
 }
-   
+    */
 
    @media  (min-width: 768px) {
 
