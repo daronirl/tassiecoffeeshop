@@ -9,7 +9,6 @@ const btnShake = document.querySelector('.btn-shake');
 const priceOfItem = document.querySelector('.price-of-item');
 
 const cost = document.querySelector('#cost');
-let total = 0;
 
 
 // Buttons to add each item to order
@@ -20,67 +19,132 @@ btnShake.addEventListener('click', addMilkShakeOrder);
 
 
 
+const tassieCoffee = 
+
+  {
+
+    lgcoffee: 'Large Coffee',
+    priceCoffee: '$4.00',
+
+    lgEspresso: 'Espresso',
+    priceCoffee: '$5.00',
+
+    lgBagel: 'Bagel',
+    priceCoffee: '$2.00',
+
+    lgMilk: 'Milkshake',
+    priceCoffee: '$6.00'
+   
+
+  }
+
+ 
+
+
+
+
+// FUNCTIONS TO CREATE ELEMENTS FOR NEW ORDERS
 function addCoffeeOrder () {
  
+  hidden.classList.remove('hidden');
+    // const p = document.createElement('p');
+    // p.appendChild(document.createTextNode("Large Coffee:"));
+    // const button = document.createElement('button');
+    // button.className = 'remove-button';
+    // p.appendChild(button);
 
-    hidden.classList.remove('hidden');
-    const p = document.createElement('p');
-    p.appendChild(document.createTextNode("Large Coffee:"));
-    // const input = document.createElement('input');
-    // p.appendChild(input);
 
-  //  p.appendChild(span);
+    // document.querySelector('.order-complete').appendChild(p);
 
-    document.querySelector('.order-complete').appendChild(p);
+   
+    const markup = `
+    
+    <p>${tassieCoffee.lgcoffee} - <span class="price-of-item">${tassieCoffee.priceCoffee}</span> <button class="remove-button">Remove Item</button></p>
+    
+    `;
+
+    document.querySelector('.order-complete').innerHTML = markup;
+
+
+
   
-    if (btnCoffee === true){
-      total++;
-      priceOfItem.innerHTML = total;
-      
-    }
-
- 
 
 }
-
 
 
 function addEspressoOrder () {
-  hidden.classList.remove('hidden');
-  const p = document.createElement('p');
-  p.appendChild(document.createTextNode('Espresso'));
-  // const input = document.createElement('input');
-  // p.appendChild(input);
-  document.querySelector('.order-complete').appendChild(p);
+
+  // hidden.classList.remove('hidden');
+  // const p = document.createElement('p');
+  // p.appendChild(document.createTextNode('Espresso'));
+
+  // document.querySelector('.order-complete').appendChild(p);
 
 
+    hidden.classList.remove('hidden');
+    const markup = `
+    
+    <p>${tassieCoffee.lgEspresso} - <span class="price-of-item">${tassieCoffee.priceCoffee}</span> <button class="remove-button">Remove Item</button></p>
+    
+    `;
+
+    document.querySelector('.order-complete').innerHTML = markup;
+
+
+  
+  
   
 }
 
 
-
 function addBagelOrder () {
-  hidden.classList.remove('hidden');
-  const p = document.createElement('p');
-  p.appendChild(document.createTextNode('Bagel'));
-  // const input = document.createElement('input');
-  // p.appendChild(input);
+
+  // hidden.classList.remove('hidden');
+  // const p = document.createElement('p');
+  // p.appendChild(document.createTextNode('Bagel'));
+
  
 
-  document.querySelector('.order-complete').appendChild(p);
+  // document.querySelector('.order-complete').appendChild(p);
+
+
+    hidden.classList.remove('hidden');
+    const markup = `
+    
+    <p>${tassieCoffee.lgBagel} - <span class="price-of-item">${tassieCoffee.priceCoffee}</span> <button class="remove-button">Remove Item</button></p>
+    
+    `;
+
+    document.querySelector('.order-complete').innerHTML = markup;
+
+
+
+  
  
 }
 
 
 function addMilkShakeOrder () {
-  hidden.classList.remove('hidden');
-  const p = document.createElement('p');
-  p.appendChild(document.createTextNode('Milkshake'));
-  // const input = document.createElement('input');
-  // p.appendChild(input);
- 
+  // hidden.classList.remove('hidden');
+  // const p = document.createElement('p');
+  // p.appendChild(document.createTextNode('Milkshake'));
 
-  document.querySelector('.order-complete').appendChild(p);
+
+  // document.querySelector('.order-complete').appendChild(p);
+
+
+    hidden.classList.remove('hidden');
+    const markup = `
+    
+    <p>${tassieCoffee.lgMilk} - <span class="price-of-item">${tassieCoffee.priceCoffee}</span> <button class="remove-button">Remove Item</button></p>
+    
+    `;
+
+    document.querySelector('.order-complete').innerHTML = markup;
+
+
+
+  
  
 }
 
