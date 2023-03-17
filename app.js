@@ -7,7 +7,7 @@ const btnEspresso = document.querySelector('#btn-espresso');
 const btnBagel = document.querySelector('#btn-bagel');
 const btnShake = document.querySelector('#btn-shake');
 const priceOfItem = document.querySelector('.price-of-item');
-let countDisplay = document.querySelector('span.myQuantity');
+const countDisplay = document.querySelector('span.myQuantity');
 
 
 const cost = document.querySelector('#cost');
@@ -18,7 +18,6 @@ btnCoffee.addEventListener('click', addCoffeeOrder);
 btnEspresso.addEventListener('click', addEspressoOrder);
 btnBagel.addEventListener('click', addBagelOrder);
 btnShake.addEventListener('click', addMilkShakeOrder);
-
 
 
 
@@ -56,7 +55,7 @@ if (quantity === 1) {
 
 } else {
 let spanTwo = document.querySelector('#myQuantity');
-spanTwo.textContent = 'Large Coffee ' + '$4.00 ' + quantity;
+spanTwo.textContent = 'Large Coffee ' + '$4.00 ' + '- ' + quantity;
 }
 
 
