@@ -7,7 +7,7 @@ const btnEspresso = document.querySelector('#btn-espresso');
 const btnBagel = document.querySelector('#btn-bagel');
 const btnShake = document.querySelector('#btn-shake');
 const priceOfItem = document.querySelector('.price-of-item');
-
+let countDisplay = document.querySelector('span.myQuantity');
 
 
 const cost = document.querySelector('#cost');
@@ -21,60 +21,44 @@ btnShake.addEventListener('click', addMilkShakeOrder);
 
 
 
-const tassieCoffee = [
-
-{
-    lgcoffee: 'Large Coffee',
-    priceCoffee: '$4.00',
-
-},
-
-{
-
-    lgEspresso: 'Espresso',
-    priceCoffee: '$5.00',
-
-},
-
-{
-
-    lgBagel: 'Bagel',
-    priceCoffee: '$2.00',
-
-
-},
-
-{
-    lgMilk: 'Milkshake',
-    priceCoffee: '$6.00'
-
-
-}
-
-]
 
 
 
-
-let quantity = 0; // initialize quantity variable to 0
+let quantity = 0; 
 let clickCount = 0;
 
 
 // FUNCTIONS TO CREATE ELEMENTS FOR NEW ORDERS
 function addCoffeeOrder () {
- 
-  hidden.classList.remove('hidden');
+    hidden.classList.remove('hidden');
     
+    clickCount++
+    if  (clickCount === 10) {
+        btnCoffee.disabled = true;
+        
 
-   quantity++
-   
-   const markup = `
-    
-    <p>${tassieCoffee[0].lgcoffee} - <span class="price-of-item">${tassieCoffee[0].priceCoffee}</span> - ${quantity} <button class="remove-button">Remove </button></p>
-    
-    `;
+    }
+ quantity++
+if (quantity === 1) {
+  const p = document.createElement('p');
+  
 
-    document.querySelector('.order-complete').innerHTML = markup;
+  const span = document.createElement('span');
+
+ span.className = 'price-of-item';
+  p.appendChild(span);
+
+  const spanTwo = document.createElement('span');
+   spanTwo.id = 'myQuantity';
+    p.appendChild(spanTwo);
+    document.querySelector('.order-complete').appendChild(p);
+
+
+} else {
+let spanTwo = document.querySelector('#myQuantity');
+spanTwo.textContent = 'Large Coffee ' + '$4.00 ' + quantity;
+}
+
 
 
 
@@ -117,7 +101,7 @@ function addBagelOrder () {
     
     `;
 
-    document.querySelector('.order-complete').innerHTML += markup;
+    document.querySelector('.order-complete').innerHTML = markup;
 
 
 
