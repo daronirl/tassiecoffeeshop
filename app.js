@@ -1,5 +1,5 @@
 
-const removeItem = document.querySelector('.remove-button');
+const removeItem = document.querySelector('#remove-button');
 const hidden = document.querySelector('.hidden');
 const itemDisplay = document.querySelector('.order-complete');
 const btnCoffee = document.querySelector('#btn-coffee');
@@ -7,18 +7,10 @@ const btnEspresso = document.querySelector('#btn-espresso');
 const btnBagel = document.querySelector('#btn-bagel');
 const btnShake = document.querySelector('#btn-shake');
 const priceOfItem = document.querySelector('.price-of-item');
-const countDisplay = document.querySelector('span.myQuantity');
+
 
 
 const cost = document.querySelector('#cost');
-
-
-// Buttons to add each item to order
-btnCoffee.addEventListener('click', addCoffeeOrder);
-btnEspresso.addEventListener('click', addEspressoOrder);
-btnBagel.addEventListener('click', addBagelOrder);
-btnShake.addEventListener('click', addMilkShakeOrder);
-
 
 
 
@@ -32,31 +24,37 @@ function addCoffeeOrder () {
     hidden.classList.remove('hidden');
     
     clickCount++
-    if  (clickCount === 10) {
+    if  (clickCount === 5) {
         btnCoffee.disabled = true;
-        
-
     }
+
+
  quantity++
-if (quantity === 1) {
+ if (quantity === 1) {
   const p = document.createElement('p');
+  const button = document.createElement('button');
+  const span = document.createElement('span');
+  const spanPrice = document.createElement('span');
+
+  p.appendChild(document.createTextNode('Large Coffee'));
+  span.appendChild(document.createTextNode(' $4.00'));
+  button.appendChild(document.createTextNode('Remove'));
   
 
-  const span = document.createElement('span');
-
- span.className = 'price-of-item';
+  button.id = 'remove-button';
+  spanPrice.id = 'myQuantity';
   p.appendChild(span);
+  span.appendChild(button);
+  span.appendChild(spanPrice);
+  document.querySelector('.order-complete').appendChild(p);
 
-  const spanTwo = document.createElement('span');
-   spanTwo.id = 'myQuantity';
-    p.appendChild(spanTwo);
-    document.querySelector('.order-complete').appendChild(p);
+  
+ } else {
+  let spanPrice = document.querySelector('#myQuantity');
+  spanPrice.textContent = quantity;
+  
+ }
 
-
-} else {
-let spanTwo = document.querySelector('#myQuantity');
-spanTwo.textContent = 'Large Coffee ' + '$4.00 ' + '- ' + quantity;
-}
 
 
 
@@ -198,3 +196,17 @@ function addMilkShakeOrder () {
 
 // createNewItem();
 // createListItem('Large Coffee');
+
+function tassie () {
+  console.log('hehe');
+}
+
+
+// Buttons to add each item to order
+btnCoffee.addEventListener('click', addCoffeeOrder);
+btnEspresso.addEventListener('click', addEspressoOrder);
+btnBagel.addEventListener('click', addBagelOrder);
+btnShake.addEventListener('click', addMilkShakeOrder);
+
+// Remove item from order
+removeItem.addEventListener('click', tassie);
