@@ -94,7 +94,7 @@ h2 {
     transform: scale(0.9);
    }
 
-   #remove-button {
+   .remove-button {
     font-size: 7px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -114,7 +114,7 @@ h2 {
     z-index: 1;
    }
    
-   #remove-button:before {
+   .remove-button:before {
     transition: 0.5s all ease;
     position: absolute;
     top: 0;
@@ -127,18 +127,18 @@ h2 {
     z-index: -1;
    }
    
-   #remove-button:hover, #remove-button:focus {
+   .remove-button:hover, .remove-button:focus {
     color: white;
    }
    
-   #remove-button:hover:before, #remove-button:focus:before {
+   .remove-button:hover:before, .remove-button:focus:before {
     transition: 0.5s all ease;
     left: 0;
     right: 0;
     opacity: 1;
    }
    
-   #remove-button:active {
+   .remove-button:active {
     transform: scale(0.9);
    }
 
