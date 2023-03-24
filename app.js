@@ -12,44 +12,63 @@ const totalEl = document.querySelector('.total p');
 
 
 let totalPrice = 0;
-
+let clickCount = 0; 
+let isTextDisplayed = false;
 // FUNCTIONS TO CREATE ELEMENTS FOR NEW ORDERS
-function addCoffeeOrder () {
+function addCoffeeOrder() {
+  clickCount++;
 
+  if (clickCount === 5) {
+    btnCoffee.disabled = true;
+  }
 
-    hidden.classList.remove('hidden');
-    
-    // create p element for coffee
-    const largeCoffeeEl = document.createElement('p');
-    const text = document.createTextNode('Large Coffee');
-    largeCoffeeEl.appendChild(text); 
+  hidden.classList.remove('hidden');
 
+  // create p element for coffee
+  const largeCoffeeEl = document.createElement('p');
+  const text = document.createTextNode('Large Coffee');
+  largeCoffeeEl.appendChild(text);
 
-    // create span for price of item
-    const priceEl = document.createElement('span');
-    const textPrice = document.createTextNode(' $4.00 - ');
-    priceEl.appendChild(textPrice);
-    priceEl.className = 'price-of-item';
-    largeCoffeeEl.appendChild(priceEl);
+  // create span for price of item
+  const priceEl = document.createElement('span');
+  const textPrice = document.createTextNode(' $4.00 - ');
+  priceEl.appendChild(textPrice);
+  priceEl.className = 'price-of-item';
+  largeCoffeeEl.appendChild(priceEl);
 
-    // using createButton function to create remove button
-    const button = createButton('remove-button');
-    largeCoffeeEl.appendChild(button);
+  // create span for quantity
+  const quantityEl = document.createElement('span');
+  quantityEl.id = 'myQuantity';
+  quantityEl.textContent = clickCount;
+  largeCoffeeEl.appendChild(quantityEl);
 
-    button.addEventListener('click', () => {
-      largeCoffeeEl.remove(); // Remove the coffee order element from the DOM
-      totalPrice -= 5;
-      totalEl.textContent = `Total: $${totalPrice.toFixed(2)}`;
-    });
-  
-   document.querySelector('.order-complete').appendChild(largeCoffeeEl);
+  // using createButton function to create remove button
+  const button = createButton('remove-button');
+  largeCoffeeEl.appendChild(button);
 
+  let increment = 5;
 
-   totalPrice += 5; // Add the price of the item to the total
-   totalEl.textContent = `Total: $${totalPrice.toFixed(2)}`;
+  button.addEventListener('click', () => {
+    largeCoffeeEl.remove(); // Remove the coffee order element from the DOM
+    totalPrice -= increment;
+    totalEl.textContent = `Total: $${totalPrice.toFixed(2)}`;
+
+    // Decrease the increment by 1
+    increment--;
+
+    // Disable the button on the 5th click
+    clickCount--;
+    if (clickCount < 5) {
+      btnCoffee.disabled = false;
+    }
+  });
+
+  document.querySelector('.order-complete').appendChild(largeCoffeeEl);
+
+  totalPrice += increment; // Add the price of the item to the total
+  totalEl.textContent = `Total: $${totalPrice.toFixed(2)}`;
+
 }
-
-
 
 
 
