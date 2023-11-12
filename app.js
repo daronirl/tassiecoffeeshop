@@ -46,7 +46,7 @@ function addCoffeeOrder() {
   const button = createButton('remove-button');
   largeCoffeeEl.appendChild(button);
 
-  let increment = 5;
+  let increment = 4;
 
   button.addEventListener('click', () => {
     largeCoffeeEl.remove(); // Remove the coffee order element from the DOM
